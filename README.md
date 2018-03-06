@@ -1,2 +1,2 @@
 # Prioritizer
-Prioritizing requirements based on historical data and current resource pool
+Prioritizing requirements based on historical data and current resource pool.
