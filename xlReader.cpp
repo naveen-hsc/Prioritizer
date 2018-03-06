@@ -31,20 +31,31 @@ int tokenize(char *str, char chr, char **argz, int maxLen) {
 
 	return n;
 }
-
+void prioritize(char** parts){
+	//cout<<parts[2]<<parts[3]<<endl;
+	if(atoi(parts[3]) > atoi(parts[2])){
+		cout<<"this is most success rate case:high priority"<<endl;
+	}	
+	else {
+		cout<<"need to think logic"<<endl;
+	}
+	
+}
 int main(int argc,char* argv[]){
   FILE *fp = fopen(inputFile, "r");  
-  char *parts[4];
+  char *parts[7];
   char line[128];
   int i=0;
-	//fgets(line, sizeof(line), fp);
+  fgets(line, sizeof(line), fp);
   while (fgets(line, sizeof(line), fp) != NULL) {
 		  
-		tokenize(line, ',', parts, 4); 
-   if(i<4){
-      cout<<parts[0]<<":"<<parts[1]<<":"<<std::string(parts[2])<<endl;
+		tokenize(line, ',', parts,7); 
+   if(i<7){
+      //cout<<parts[0]<<":"<<parts[1]<<":"<<parts[2]<<":"<<parts[3]<<":"<<parts[4]<<":"<<parts[5]<<endl;
       i++;
-      }
+     }
+
+      prioritize(parts);	
    }
 return 0;
 }
